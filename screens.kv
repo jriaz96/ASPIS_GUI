@@ -1,0 +1,168 @@
+#:kivy 1.0.0
+
+
+ScreenManagement:
+    Screen1:
+    Screen2:
+    Screen3:
+    Screen4:
+    Screen5:
+	
+<Screen1>:
+    name : 'home'
+
+    Button:
+        on_release: app.root.current = 'personal_info'
+        text: 'New User'
+        size_hint:.5,1
+        background_color: (1,0,0,1)
+        font_size: 50
+
+    Button:
+        on_release: app.root.current = 'control'
+        text: 'Existing User'
+        size_hint: .5,1
+        pos: 958,1
+        background_color: (1,1,0,1)
+        font_size: 50
+            
+<Screen2>:
+    name: 'personal_info'
+    f_username: username
+    #f_password: password
+    f_DOB: DOB
+    f_blood: blood
+    f_insurance: insurance
+    f_policyNumber: policyNumber
+    
+
+    GridLayout:
+        rows: 7
+        cols: 2
+        padding: 5
+        spacing: 5
+
+        Label:
+            text: 'Welcome to ASPIS'
+            font_size: 50
+        Label:
+            text: 'New User Input'
+            font_size:50
+
+        Label:
+            text: ' Name:'
+            font_size: 25
+ 
+        TextInput:
+            id: username
+            
+
+        Label:
+            text: 'Date of Birth:'
+            font_size: 25
+        TextInput:
+            id: DOB
+
+
+        Label:
+            text: 'Blood Type:'
+            font_size: 25
+        TextInput:
+            id: blood
+
+
+        Label:
+            text: 'Insurance Company:'
+            font_size: 25
+        TextInput:
+            id: insurance
+
+
+        Label:
+            text: 'Policy Number:'
+            font_size: 25
+        TextInput:
+            id: policyNumber
+
+        
+
+        Button:
+            on_release: app.root.current = 'home'
+            text: 'Quit and Go Home'
+            font_size: 25
+            size_hint: .3,.4
+            pos_hint: 2,4
+            background_color: (1,0,0,1)
+        Button:
+            on_release: app.root.current = 'emergency_contact'
+            text: 'Submit and Continue'
+            font_size: 25
+            size_hint: .3,.4
+            pos_hint: 2,4
+            background_color: (1,1,0,1)
+            
+
+
+<Screen3>:
+    name: 'emergency_contact'
+    f_username: username
+    f_phone: phone
+
+
+    GridLayout:
+        rows: 4
+        cols: 2
+        padding: 5
+        spacing: 5
+
+        Label:
+            text: 'ASPIS'
+            font_size: 50
+        Label:
+            text: 'Emergency Conatct Information'
+            font_size:50
+
+        Label:
+            text: ' Name:'
+            font_size: 25
+ 
+        TextInput:
+            id: username
+            
+
+        Label:
+            text: 'Phone Number:'
+            font_size: 25
+        TextInput:
+            id: phone
+
+
+        Button:
+            on_release: app.root.current = 'home'
+            text: 'Quit and Go Home'
+            font_size: 25
+            size_hint: .3,.4
+            pos_hint: 2,4
+            background_color: (1,0,0,1)
+        Button:
+            on_release: app.root.current ='control'
+            text: 'Submit and Continue'
+            font_size: 25
+            size_hint: .3,.4
+            pos_hint: 2,4
+            background_color: (1,1,0,1)
+    
+
+
+<Screen4>:
+    name: 'control'
+
+    Button:
+        text: 'Control screen'
+        font_size: 50
+
+    Button:
+        on_release: app.root.current = 'home'
+        text: 'Go back home'
+        font_size: 25
+        size_hint: .2,.1
